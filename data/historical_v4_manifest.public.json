@@ -1,0 +1,637 @@
+{
+  "version": 3,
+  "tables": {
+    "afro": {
+      "file": "afro.csv",
+      "sha256": "ee02afe3f811d51e4bfb48a1ea1defb043e37271e4ba01415201b37cb555a5d5",
+      "rows": 365
+    },
+    "wgm": {
+      "file": "wgm.csv",
+      "sha256": "4e2a8259796a40f270818f9eb6d7918f0fcd3789bba2d25b0943edd609d334e0",
+      "rows": 890
+    },
+    "palms": {
+      "file": "palms.csv",
+      "sha256": "aa2d250a80878c308f4763a817506c5322181523fd8f7c449dd91efa6ec3f245",
+      "rows": 63
+    },
+    "pases": {
+      "file": "pases.csv",
+      "sha256": "5b61a756b26377d386756007beaad5f259aa9fa38f1cad0e6d5416ca1ff1c38b",
+      "rows": 63
+    },
+    "hno": {
+      "file": "hno.csv",
+      "sha256": "2c2a726ee4c60495a6fb81a5b92e3b9a98aa59fc2c4dcf601db8ac207d27af7c",
+      "rows": 42
+    },
+    "ged": {
+      "file": "ged.csv",
+      "sha256": "bb2e9d03d7251ddf35d7e1542f5befdfe26ab33f48306ade279c8fa2b7dcb0cf",
+      "rows": 28
+    }
+  },
+  "features": [
+    {
+      "name": "__new3__afro_willing",
+      "block": "afro",
+      "numerator": "Q58B in {3,4}",
+      "denominator": "Q58A=0; Q58B in {1,2,3,4}",
+      "weight": "withinwt_hh",
+      "unit": "weighted proportion",
+      "family": "afro_willing",
+      "threshold": 50,
+      "fallback": [
+        [
+          "country",
+          "religion"
+        ],
+        [
+          "country",
+          "age",
+          "sex"
+        ],
+        [
+          "country",
+          "age"
+        ],
+        [
+          "country",
+          "sex"
+        ],
+        [
+          "country"
+        ]
+      ]
+    },
+    {
+      "name": "__new3__afro_god_protection",
+      "block": "afro",
+      "numerator": "Q58C=5",
+      "denominator": "Q58A=0; Q58B in {1,2}; Q58C in {1..26,95}",
+      "weight": "withinwt_hh",
+      "unit": "weighted proportion",
+      "family": "afro_reasons",
+      "threshold": 50,
+      "fallback": [
+        [
+          "country",
+          "religion"
+        ],
+        [
+          "country",
+          "age",
+          "sex"
+        ],
+        [
+          "country",
+          "age"
+        ],
+        [
+          "country",
+          "sex"
+        ],
+        [
+          "country"
+        ]
+      ]
+    },
+    {
+      "name": "__new3__afro_other_bad_side_effects",
+      "block": "afro",
+      "numerator": "Q58C=13",
+      "denominator": "Q58A=0; Q58B in {1,2}; Q58C in {1..26,95}",
+      "weight": "withinwt_hh",
+      "unit": "weighted proportion",
+      "family": "afro_reasons",
+      "threshold": 50,
+      "fallback": [
+        [
+          "country",
+          "religion"
+        ],
+        [
+          "country",
+          "age",
+          "sex"
+        ],
+        [
+          "country",
+          "age"
+        ],
+        [
+          "country",
+          "sex"
+        ],
+        [
+          "country"
+        ]
+      ]
+    },
+    {
+      "name": "__new3__afro_religious_leader_trust_alot",
+      "block": "afro",
+      "numerator": "Q37K=3",
+      "denominator": "Q37K in {0,1,2,3}",
+      "weight": "withinwt_hh",
+      "unit": "weighted proportion",
+      "family": "afro_religious_leader_trust_alot",
+      "threshold": 50,
+      "fallback": [
+        [
+          "country",
+          "religion"
+        ],
+        [
+          "country",
+          "age",
+          "sex"
+        ],
+        [
+          "country",
+          "age"
+        ],
+        [
+          "country",
+          "sex"
+        ],
+        [
+          "country"
+        ]
+      ]
+    },
+    {
+      "name": "__new3__afro_government_vaccine_trust",
+      "block": "afro",
+      "numerator": "Q59 in {3,4}",
+      "denominator": "Q59 in {1,2,3,4}",
+      "weight": "withinwt_hh",
+      "unit": "weighted proportion",
+      "family": "afro_government_vaccine_trust",
+      "threshold": 50,
+      "fallback": [
+        [
+          "country",
+          "religion"
+        ],
+        [
+          "country",
+          "age",
+          "sex"
+        ],
+        [
+          "country",
+          "age"
+        ],
+        [
+          "country",
+          "sex"
+        ],
+        [
+          "country"
+        ]
+      ]
+    },
+    {
+      "name": "__new3__wgm_children_strongly_important",
+      "block": "wgm",
+      "numerator": "Q24=1",
+      "denominator": "Q23=1; Q24 in {1..5}",
+      "weight": "wgt",
+      "unit": "weighted proportion",
+      "family": "wgm_children_strongly_important",
+      "threshold": 50,
+      "fallback": [
+        [
+          "country",
+          "age",
+          "sex"
+        ],
+        [
+          "country",
+          "age"
+        ],
+        [
+          "country",
+          "sex"
+        ],
+        [
+          "country"
+        ]
+      ]
+    },
+    {
+      "name": "__new3__wgm_vaccines_strongly_safe",
+      "block": "wgm",
+      "numerator": "Q25=1",
+      "denominator": "Q23=1; Q25 in {1..5}",
+      "weight": "wgt",
+      "unit": "weighted proportion",
+      "family": "wgm_vaccines_strongly_safe",
+      "threshold": 50,
+      "fallback": [
+        [
+          "country",
+          "age",
+          "sex"
+        ],
+        [
+          "country",
+          "age"
+        ],
+        [
+          "country",
+          "sex"
+        ],
+        [
+          "country"
+        ]
+      ]
+    },
+    {
+      "name": "__new3__wgm_vaccines_strongly_effective",
+      "block": "wgm",
+      "numerator": "Q26=1",
+      "denominator": "Q23=1; Q26 in {1..5}",
+      "weight": "wgt",
+      "unit": "weighted proportion",
+      "family": "wgm_vaccines_strongly_effective",
+      "threshold": 50,
+      "fallback": [
+        [
+          "country",
+          "age",
+          "sex"
+        ],
+        [
+          "country",
+          "age"
+        ],
+        [
+          "country",
+          "sex"
+        ],
+        [
+          "country"
+        ]
+      ]
+    },
+    {
+      "name": "__new3__wgm_government_health_trust_alot",
+      "block": "wgm",
+      "numerator": "Q21=1",
+      "denominator": "Q21 in {1..4}",
+      "weight": "wgt",
+      "unit": "weighted proportion",
+      "family": "wgm_government_health_trust_alot",
+      "threshold": 50,
+      "fallback": [
+        [
+          "country",
+          "age",
+          "sex"
+        ],
+        [
+          "country",
+          "age"
+        ],
+        [
+          "country",
+          "sex"
+        ],
+        [
+          "country"
+        ]
+      ]
+    },
+    {
+      "name": "__new3__wgm_medical_health_trust_alot",
+      "block": "wgm",
+      "numerator": "Q22=1",
+      "denominator": "Q22 in {1..4}",
+      "weight": "wgt",
+      "unit": "weighted proportion",
+      "family": "wgm_medical_health_trust_alot",
+      "threshold": 50,
+      "fallback": [
+        [
+          "country",
+          "age",
+          "sex"
+        ],
+        [
+          "country",
+          "age"
+        ],
+        [
+          "country",
+          "sex"
+        ],
+        [
+          "country"
+        ]
+      ]
+    },
+    {
+      "name": "__new3__wgm_science_religion_conflict",
+      "block": "wgm",
+      "numerator": "Q29=1",
+      "denominator": "D1=1; Q29 in {1,2}",
+      "weight": "wgt",
+      "unit": "weighted proportion",
+      "family": "wgm_science_religion_conflict",
+      "threshold": 50,
+      "fallback": [
+        [
+          "country",
+          "age"
+        ],
+        [
+          "country",
+          "sex"
+        ],
+        [
+          "country"
+        ]
+      ]
+    },
+    {
+      "name": "__new3__wgm_prefers_religion_in_conflict",
+      "block": "wgm",
+      "numerator": "Q30=2",
+      "denominator": "D1=1; Q29=1; Q30 in {1,2,97}",
+      "weight": "wgt",
+      "unit": "weighted proportion",
+      "family": "wgm_prefers_religion_in_conflict",
+      "threshold": 50,
+      "fallback": [
+        [
+          "country",
+          "age"
+        ],
+        [
+          "country",
+          "sex"
+        ],
+        [
+          "country"
+        ]
+      ]
+    },
+    {
+      "name": "__new3__palms_search_ge6m",
+      "block": "palms",
+      "numerator": "searchlengthqlfs in {3,4,5,6,7}",
+      "denominator": "wave=92; age 15..64; empstat1=2; searchlengthqlfs in {1..7}",
+      "weight": "ceweight1",
+      "unit": "weighted proportion",
+      "family": "palms_search",
+      "threshold": 100,
+      "fallback": [
+        [
+          "age",
+          "sex"
+        ],
+        [
+          "age"
+        ],
+        [
+          "sex"
+        ],
+        []
+      ]
+    },
+    {
+      "name": "__new3__palms_search_ge1y",
+      "block": "palms",
+      "numerator": "searchlengthqlfs in {5,6,7}",
+      "denominator": "wave=92; age 15..64; empstat1=2; searchlengthqlfs in {1..7}",
+      "weight": "ceweight1",
+      "unit": "weighted proportion",
+      "family": "palms_search",
+      "threshold": 100,
+      "fallback": [
+        [
+          "age",
+          "sex"
+        ],
+        [
+          "age"
+        ],
+        [
+          "sex"
+        ],
+        []
+      ]
+    },
+    {
+      "name": "__new3__palms_search_gt5y",
+      "block": "palms",
+      "numerator": "searchlengthqlfs=7",
+      "denominator": "wave=92; age 15..64; empstat1=2; searchlengthqlfs in {1..7}",
+      "weight": "ceweight1",
+      "unit": "weighted proportion",
+      "family": "palms_search",
+      "threshold": 100,
+      "fallback": [
+        [
+          "age",
+          "sex"
+        ],
+        [
+          "age"
+        ],
+        [
+          "sex"
+        ],
+        []
+      ]
+    },
+    {
+      "name": "__new3__pases_unemployment_share",
+      "block": "pases",
+      "numerator": "empstat1=2",
+      "denominator": "year=2024; age 15..64; empstat1 in {1,2}",
+      "weight": "pweight",
+      "unit": "weighted proportion",
+      "family": "pases_unemployment_share",
+      "threshold": 100,
+      "fallback": [
+        [
+          "age",
+          "sex"
+        ],
+        [
+          "age"
+        ],
+        [
+          "sex"
+        ],
+        []
+      ]
+    },
+    {
+      "name": "__new3__pases_search_among_nonemployed",
+      "block": "pases",
+      "numerator": "searching=1",
+      "denominator": "year=2024; age 15..64; empstat1 in {0,2}; searching in {1,2}",
+      "weight": "pweight",
+      "unit": "weighted proportion",
+      "family": "pases_search_among_nonemployed",
+      "threshold": 100,
+      "fallback": [
+        [
+          "age",
+          "sex"
+        ],
+        [
+          "age"
+        ],
+        [
+          "sex"
+        ],
+        []
+      ]
+    },
+    {
+      "name": "__new3__pases_paid_work_among_employed",
+      "block": "pases",
+      "numerator": "emp_wage=1",
+      "denominator": "year=2024; age 15..64; empstat1=1; emp_wage in {1,2}",
+      "weight": "pweight",
+      "unit": "weighted proportion",
+      "family": "pases_paid_work_among_employed",
+      "threshold": 100,
+      "fallback": [
+        [
+          "age",
+          "sex"
+        ],
+        [
+          "age"
+        ],
+        [
+          "sex"
+        ],
+        []
+      ]
+    },
+    {
+      "name": "__new3__hno_protection_mean",
+      "block": "hno",
+      "numerator": "sum valid Protection_severity",
+      "denominator": "number of subdistricts with Protection_severity in {1..5}",
+      "weight": "equal subdistricts",
+      "unit": "arithmetic mean ordinal severity code"
+    },
+    {
+      "name": "__new3__hno_mine_action_mean",
+      "block": "hno",
+      "numerator": "sum valid Protection_MA_Severity",
+      "denominator": "number of subdistricts with Protection_MA_Severity in {1..5}",
+      "weight": "equal subdistricts",
+      "unit": "arithmetic mean ordinal severity code"
+    },
+    {
+      "name": "__new3__hno_education_mean",
+      "block": "hno",
+      "numerator": "sum valid Education_severity",
+      "denominator": "number of subdistricts with Education_severity in {1..5}",
+      "weight": "equal subdistricts",
+      "unit": "arithmetic mean ordinal severity code"
+    },
+    {
+      "name": "__new3__ged_2024_log_events",
+      "block": "ged",
+      "numerator": "count of unique event records with parsed date_start=date_end",
+      "denominator": "none",
+      "weight": "none",
+      "unit": "log1p event record count"
+    },
+    {
+      "name": "__new3__ged_janapr2025_log_events",
+      "block": "ged",
+      "numerator": "count of unique event records with parsed date_start=date_end",
+      "denominator": "none",
+      "weight": "none",
+      "unit": "log1p event record count"
+    }
+  ],
+  "afro_religion_map": {
+    "1": "Christian",
+    "2": "Christian",
+    "3": "Christian",
+    "4": "Christian",
+    "5": "Christian",
+    "6": "Christian",
+    "7": "Christian",
+    "8": "Christian",
+    "9": "Christian",
+    "10": "Christian",
+    "11": "Christian",
+    "12": "Christian",
+    "13": "Christian",
+    "14": "Christian",
+    "15": "Christian",
+    "16": "Christian",
+    "17": "Christian",
+    "18": "Muslim",
+    "19": "Muslim",
+    "20": "Muslim",
+    "21": "Muslim",
+    "22": "Muslim",
+    "23": "Muslim",
+    "24": "Muslim",
+    "0": "Not religious",
+    "25": "Traditional religions",
+    "26": "Hindu",
+    "27": "Baha'i",
+    "28": "Not religious",
+    "29": "Not religious",
+    "30": "Christian",
+    "31": "Christian",
+    "32": "Christian",
+    "33": "Christian",
+    "34": "Jewish",
+    "100": "Christian",
+    "260": "Christian",
+    "261": "Christian",
+    "300": "Christian",
+    "340": "Christian",
+    "740": "Christian",
+    "742": "Christian",
+    "820": "Christian",
+    "821": "Christian",
+    "822": "Christian",
+    "823": "Christian",
+    "1260": "Christian"
+  },
+  "ged_region_crosswalk": {
+    "Al Hasakah governorate": "Al-Hasakeh",
+    "Aleppo governorate": "Aleppo",
+    "Ar Raqqah governorate": "Ar-Raqqa",
+    "As Suwayda governorate": "As-Sweida",
+    "Damascus governorate": "Damascus",
+    "Daraa governorate": "Dar'a",
+    "Deir ez Zor governorate": "Deir-ez-Zor",
+    "Hamah governorate": "Hama",
+    "Homs governorate": "Homs",
+    "Idlib governorate": "Idleb",
+    "Latakia governorate": "Lattakia",
+    "Quneitra governorate": "Quneitra",
+    "Rif Dimashq governorate": "Rural Damascus",
+    "Tartus governorate": "Tartous"
+  },
+  "restrictions": {
+    "afro_reasons": "Only unvaccinated people unlikely to vaccinate; contextual proportions, not UNICEF Q10 distribution; Q58C 8/9 substantive; 13 other bad side effects",
+    "wgm_religion": "D1 does not identify denominations; runtime Q05 must be one of eight named religions; no religion grouping",
+    "egypt": "Ignore Q01 even if supplied; use levels without age",
+    "national_groups": "Do not require unrelated demographic keys; Afro invalid age only removes age detail. WGM age 18..99 (100 refused excluded), WB 15..64 are reference filters.",
+    "wb": "Only exact user.country=South Africa; contextual labor shares usable for any employment status; PALMS is elapsed search, not future hiring probability; 45+ source is 45..64",
+    "unhcr": "Only Syrian origin governorate, same table both waves; HNO means administrative ordinal codes; GED equal reported dates do not guarantee precision; no fatalities",
+    "quality": "not measured; synthetic schema coverage is not respondent coverage",
+    "smoothing": "none",
+    "network_downloads": false
+  }
+}

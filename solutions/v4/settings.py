@@ -1,0 +1,1 @@
+CONFIG = {'candidates': {'unicef': [1, 2, 4, 8, 16], 'world_bank': [1, 2, 4, 8], 'unhcr': [1, 2, 4]}, 'extend_calibration': True, 'representatives': {'unicef': 6, 'world_bank': 12, 'unhcr': 16, 'generic': 4}}

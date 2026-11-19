@@ -1,0 +1,29 @@
+metric,region,n,value
+ged_2024_log_events,Al-Hasakeh,56,4.04305126783455
+ged_2024_log_events,Aleppo,245,5.5053315359323625
+ged_2024_log_events,Ar-Raqqa,50,3.9318256327243257
+ged_2024_log_events,As-Sweida,4,1.6094379124341003
+ged_2024_log_events,Damascus,13,2.6390573296152584
+ged_2024_log_events,Dar'a,81,4.406719247264253
+ged_2024_log_events,Deir-ez-Zor,210,5.351858133476067
+ged_2024_log_events,Hama,70,4.2626798770413155
+ged_2024_log_events,Homs,103,4.6443908991413725
+ged_2024_log_events,Idleb,98,4.59511985013459
+ged_2024_log_events,Lattakia,74,4.31748811353631
+ged_2024_log_events,Quneitra,16,2.833213344056216
+ged_2024_log_events,Rural Damascus,39,3.6888794541139363
+ged_2024_log_events,Tartous,5,1.791759469228055
+ged_janapr2025_log_events,Al-Hasakeh,15,2.772588722239781
+ged_janapr2025_log_events,Aleppo,90,4.51085950651685
+ged_janapr2025_log_events,Ar-Raqqa,11,2.4849066497880004
+ged_janapr2025_log_events,As-Sweida,0,0.0
+ged_janapr2025_log_events,Damascus,1,0.6931471805599453
+ged_janapr2025_log_events,Dar'a,3,1.3862943611198906
+ged_janapr2025_log_events,Deir-ez-Zor,13,2.6390573296152584
+ged_janapr2025_log_events,Hama,13,2.6390573296152584
+ged_janapr2025_log_events,Homs,14,2.70805020110221
+ged_janapr2025_log_events,Idleb,1,0.6931471805599453
+ged_janapr2025_log_events,Lattakia,31,3.4657359027997265
+ged_janapr2025_log_events,Quneitra,1,0.6931471805599453
+ged_janapr2025_log_events,Rural Damascus,5,1.791759469228055
+ged_janapr2025_log_events,Tartous,11,2.4849066497880004

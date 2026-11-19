@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "historical_variant": "audited_external_v4",
+  "upstream_terms_checked": "2026-11-19",
+  "sources": {
+    "afro": {
+      "title": "Afrobarometer merged Round 9, 39 countries, June 2025 update",
+      "source_url": "https://www.afrobarometer.org/survey-resource/merged-round-9-data-39-countries-2023/",
+      "filename": "R9.Merge_39ctry.20Nov23.final_.release_Updated.4Jun25-3.sav",
+      "bytes": 70621348,
+      "sha256": "3afcecd08d2f4b531a926d455a943084d9f71c1276b4f3a58e77a9162e6879d8",
+      "schema": {
+        "format": "SPSS SAV",
+        "columns": [
+          "COUNTRY",
+          "Q1",
+          "Q100",
+          "Q95",
+          "Q58A",
+          "Q58B",
+          "Q58C",
+          "Q37K",
+          "Q59",
+          "withinwt_hh"
+        ],
+        "reader": "pyreadstat.read_sav(user_missing=True)",
+        "slice": "COUNTRY 16,21,28,39; age is only a grouping key; national/religion/sex totals retain unknown ages"
+      },
+      "output": {
+        "file": "afro.csv",
+        "sha256": "ee02afe3f811d51e4bfb48a1ea1defb043e37271e4ba01415201b37cb555a5d5",
+        "rows": 365
+      },
+      "included_in_repository": false,
+      "terms": {
+        "label": "Afrobarometer custom data-use policy; no redistribution grant established for these derived tables",
+        "redistribution_status": "not_cleared",
+        "evidence_urls": [
+          "https://www.afrobarometer.org/data/data-usage-and-access-policy/"
+        ],
+        "attribution": "Afrobarometer Data, Kenya, Mali, Nigeria and Zambia, Round 9, 2021-2022; https://www.afrobarometer.org"
+      },
+      "modifications": "Derived context statistics; see prepare.py and historical_v4_manifest.public.json for exact formulas, filters, weights and grouping."
+    },
+    "wgm": {
+      "title": "Wellcome Global Monitor 2018, Appendix D",
+      "source_url": "https://wellcome.org/insights/reports/wellcome-global-monitor-2018",
+      "filename": "wgm2018-dataset-crosstabs-all-countries.xlsx",
+      "bytes": 52593312,
+      "sha256": "8bcbacd403a4ee531a526913364c163005be6b497ee429214ec2dd6d7a500c90",
+      "schema": {
+        "format": "XLSX",
+        "sheets": [
+          "Data dictionary",
+          "Full dataset"
+        ],
+        "columns": [
+          "WP5",
+          "Age",
+          "Gender",
+          "wgt",
+          "D1",
+          "Q21",
+          "Q22",
+          "Q23",
+          "Q24",
+          "Q25",
+          "Q26",
+          "Q29",
+          "Q30"
+        ],
+        "slice": "Ten named countries in prepare.py; age 18..99; WP5 codes parsed from Data dictionary"
+      },
+      "output": {
+        "file": "wgm.csv",
+        "sha256": "4e2a8259796a40f270818f9eb6d7918f0fcd3789bba2d25b0943edd609d334e0",
+        "rows": 890
+      },
+      "included_in_repository": true,
+      "terms": {
+        "label": "CC BY (report version unspecified); Wellcome website default CC BY 4.0",
+        "redistribution_status": "permitted_with_attribution",
+        "evidence_urls": [
+          "https://cms.wellcome.org/sites/default/files/wellcome-global-monitor-2018.pdf#page=2",
+          "https://wellcome.org/about-us/our-people/governance/privacy-and-terms"
+        ],
+        "attribution": "Gallup (2019), Wellcome Global Monitor - First Wave Findings. Copyright Wellcome.",
+        "collection_support": {
+          "url": "https://datacatalogue.ukdataservice.ac.uk/studies/study/8466",
+          "doi": "10.5255/UKDA-SN-8466-2",
+          "citation": "Wellcome Trust and Gallup Organization Ltd, Wellcome Global Monitor, 2018, 2nd edition (2019)",
+          "boundary": "Collection-level support; the specific Appendix D workbook is identified by its own hash and Wellcome source notice."
+        }
+      },
+      "modifications": "Derived context statistics; see prepare.py and historical_v4_manifest.public.json for exact formulas, filters, weights and grouping."
+    },
+    "palms": {
+      "title": "Post-Apartheid Labour Market Series 1993-2025, version 4",
+      "source_url": "https://doi.org/10.25828/gtr1-8r20",
+      "filename": "palmsv4.zip",
+      "bytes": 165025015,
+      "sha256": "0ddb6c9b3fe246f7356e516d2067712fc2262531559d7bd316ba194b3e02fd59",
+      "schema": {
+        "format": "ZIP containing Stata DTA",
+        "member": "palmsv4.dta",
+        "columns": [
+          "wave",
+          "age",
+          "gender",
+          "empstat1",
+          "ceweight1",
+          "searchlengthqlfs"
+        ],
+        "slice": "wave=92 (2025 Q2); age 15..64"
+      },
+      "output": {
+        "file": "palms.csv",
+        "sha256": "aa2d250a80878c308f4763a817506c5322181523fd8f7c449dd91efa6ec3f245",
+        "rows": 63
+      },
+      "included_in_repository": true,
+      "member_identity": {
+        "name": "palmsv4.dta",
+        "bytes": 1497152260,
+        "sha256": "053430b9490533ace7e8a4102dced640a6b10b0cfc48fcfd96899690642fcdde"
+      },
+      "terms": {
+        "label": "CC BY (version unspecified)",
+        "redistribution_status": "permitted_with_attribution",
+        "evidence_urls": [
+          "https://www.datafirst.uct.ac.za/dataportal/index.php/catalog/434"
+        ],
+        "access_terms_url": "https://www.datafirst.uct.ac.za/dataportal/index.php/terms-of-use",
+        "attribution": "Andrew Kerr, David Lam, Martin Wittenberg; PALMS 1993-2025, version 4; DataFirst, producer/distributor, 2025; doi:10.25828/gtr1-8r20"
+      },
+      "modifications": "Derived context statistics; see prepare.py and historical_v4_manifest.public.json for exact formulas, filters, weights and grouping."
+    },
+    "pases": {
+      "title": "Post-Apartheid Socio-Economic Series 1995-2024, version 1.1",
+      "source_url": "https://doi.org/10.25828/49GK-P872",
+      "filename": "pases-1995-2024-v1.1-stata.zip",
+      "bytes": 106208164,
+      "sha256": "9b37a4ed40e80564b93fbaf38e6d593249d76aac3216f3ba8489710e9474dd6d",
+      "schema": {
+        "format": "ZIP containing Stata DTA",
+        "member": "pases-1995-2024-v1.1-stata/pasesv1.1.dta",
+        "columns": [
+          "year",
+          "age",
+          "gender",
+          "empstat1",
+          "searching",
+          "emp_wage",
+          "pweight"
+        ],
+        "slice": "year=2024; age 15..64"
+      },
+      "output": {
+        "file": "pases.csv",
+        "sha256": "5b61a756b26377d386756007beaad5f259aa9fa38f1cad0e6d5416ca1ff1c38b",
+        "rows": 63
+      },
+      "included_in_repository": true,
+      "member_identity": {
+        "name": "pases-1995-2024-v1.1-stata/pasesv1.1.dta",
+        "bytes": 492202456,
+        "sha256": "1201d88a3f4ac5a73b8be7654deb238c7eff0c599507b4d5435ad655b45fa166"
+      },
+      "terms": {
+        "label": "CC BY (version unspecified)",
+        "redistribution_status": "permitted_with_attribution",
+        "evidence_urls": [
+          "https://www.datafirst.uct.ac.za/dataportal/index.php/catalog/1083"
+        ],
+        "access_terms_url": "https://www.datafirst.uct.ac.za/dataportal/index.php/terms-of-use",
+        "attribution": "Andrew Kerr, Amy Thornton, Martin Wittenberg; PASES 1995-2024, version 1.1; DataFirst, producer/distributor, 2026; doi:10.25828/49GK-P872"
+      },
+      "modifications": "Derived context statistics; see prepare.py and historical_v4_manifest.public.json for exact formulas, filters, weights and grouping."
+    },
+    "hno": {
+      "title": "OCHA Syria HNO 2024 PiN/severity workbook, 2024-04-01",
+      "source_url": "https://data.humdata.org/dataset/syrian-arab-republic-humanitarian-needs",
+      "filename": "pin_severity_hno_2024_20240401.xlsx",
+      "bytes": 78280,
+      "sha256": "0c57a8ebaebd0cd7cf68a0745dfa1fde86085a0379312d62ca26505ddfac5a0b",
+      "schema": {
+        "format": "XLSX",
+        "sheet_after_strip": "sectr_+inter-sectr sub-district",
+        "header_marker": "admin3Pcode",
+        "columns": [
+          "admin3Pcode",
+          "admin1Name_en",
+          "Protection_severity",
+          "Protection_MA_Severity",
+          "Education_severity"
+        ],
+        "slice": "Unique admin3Pcode matching SY followed by six digits; valid severity codes 1..5"
+      },
+      "output": {
+        "file": "hno.csv",
+        "sha256": "2c2a726ee4c60495a6fb81a5b92e3b9a98aa59fc2c4dcf601db8ac207d27af7c",
+        "rows": 42
+      },
+      "included_in_repository": true,
+      "terms": {
+        "label": "Creative Commons Attribution International (CC BY), version unspecified",
+        "redistribution_status": "permitted_with_attribution",
+        "evidence_urls": [
+          "https://data.humdata.org/api/3/action/package_show?id=syrian-arab-republic-humanitarian-needs"
+        ],
+        "license_url": "http://www.opendefinition.org/licenses/cc-by",
+        "attribution": "OCHA on behalf of the Humanitarian Country Team and partners; Syria HNO 2024 PiN/severity workbook, 2024-04-01 revision; HDX",
+        "resource_id": "0bc1b237-862c-47f9-b751-443d8ffa9bee",
+        "api_license_id": "cc-by"
+      },
+      "modifications": "Derived context statistics; see prepare.py and historical_v4_manifest.public.json for exact formulas, filters, weights and grouping."
+    },
+    "ged": {
+      "title": "UCDP Georeferenced Event Dataset Global, version 26.1",
+      "source_url": "https://ucdp.uu.se/downloads/",
+      "filename": "ged261-csv.zip",
+      "bytes": 39122522,
+      "sha256": "8c941d84954e555ee2e54f40fa04d9203bf1e2f962203d0a9930966c4947c667",
+      "schema": {
+        "format": "ZIP containing CSV",
+        "member": "GEDEvent_v26_1.csv",
+        "columns": [
+          "id",
+          "country",
+          "adm_1",
+          "date_start",
+          "date_end"
+        ],
+        "slice": "Syria; mapped admin1; parsed date_start=date_end; inclusive 2024 full year and 2025 January-April"
+      },
+      "output": {
+        "file": "ged.csv",
+        "sha256": "bb2e9d03d7251ddf35d7e1542f5befdfe26ab33f48306ade279c8fa2b7dcb0cf",
+        "rows": 28
+      },
+      "included_in_repository": true,
+      "member_identity": {
+        "name": "GEDEvent_v26_1.csv",
+        "bytes": 273992720,
+        "sha256": "61c3bf0a86374778343ba30c28a18b1fe739e2c33a76055504427eded4f8be27"
+      },
+      "terms": {
+        "label": "CC BY 4.0",
+        "redistribution_status": "permitted_with_attribution",
+        "evidence_urls": [
+          "https://ucdp.uu.se/downloads/"
+        ],
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "UCDP GED Global version 26.1; Davies, Pettersson and Oberg (2026), doi:10.1093/jopres/xjag046; Sundberg and Melander (2013), Introducing the UCDP Georeferenced Event Dataset, Journal of Peace Research 50(4); DEMSCORE / Swedish Research Council grant 2021-00162"
+      },
+      "modifications": "Derived context statistics; see prepare.py and historical_v4_manifest.public.json for exact formulas, filters, weights and grouping."
+    }
+  }
+}

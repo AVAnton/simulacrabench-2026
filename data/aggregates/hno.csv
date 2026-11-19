@@ -1,0 +1,43 @@
+metric,region,n,all_subdistricts,value
+hno_protection_mean,Al-Hasakeh,16,16,3.1875
+hno_protection_mean,Aleppo,40,40,4.1
+hno_protection_mean,Ar-Raqqa,10,10,3.6
+hno_protection_mean,As-Sweida,12,12,3.6666666666666665
+hno_protection_mean,Damascus,1,1,3.0
+hno_protection_mean,Dar'a,17,17,3.4705882352941178
+hno_protection_mean,Deir-ez-Zor,14,14,3.642857142857143
+hno_protection_mean,Hama,22,22,3.227272727272727
+hno_protection_mean,Homs,23,23,3.0
+hno_protection_mean,Idleb,26,26,3.923076923076923
+hno_protection_mean,Lattakia,22,22,3.0454545454545454
+hno_protection_mean,Quneitra,4,4,3.5
+hno_protection_mean,Rural Damascus,36,36,3.361111111111111
+hno_protection_mean,Tartous,27,27,2.814814814814815
+hno_mine_action_mean,Al-Hasakeh,16,16,3.1875
+hno_mine_action_mean,Aleppo,40,40,4.2
+hno_mine_action_mean,Ar-Raqqa,10,10,3.5
+hno_mine_action_mean,As-Sweida,12,12,3.9166666666666665
+hno_mine_action_mean,Damascus,1,1,3.0
+hno_mine_action_mean,Dar'a,17,17,3.823529411764706
+hno_mine_action_mean,Deir-ez-Zor,14,14,3.9285714285714284
+hno_mine_action_mean,Hama,22,22,3.3181818181818183
+hno_mine_action_mean,Homs,23,23,3.1739130434782608
+hno_mine_action_mean,Idleb,26,26,3.8846153846153846
+hno_mine_action_mean,Lattakia,22,22,3.1818181818181817
+hno_mine_action_mean,Quneitra,4,4,3.75
+hno_mine_action_mean,Rural Damascus,36,36,3.7777777777777777
+hno_mine_action_mean,Tartous,27,27,2.814814814814815
+hno_education_mean,Al-Hasakeh,16,16,4.0
+hno_education_mean,Aleppo,40,40,3.85
+hno_education_mean,Ar-Raqqa,10,10,3.7
+hno_education_mean,As-Sweida,12,12,3.5
+hno_education_mean,Damascus,1,1,4.0
+hno_education_mean,Dar'a,17,17,3.588235294117647
+hno_education_mean,Deir-ez-Zor,14,14,3.857142857142857
+hno_education_mean,Hama,22,22,3.5454545454545454
+hno_education_mean,Homs,23,23,3.217391304347826
+hno_education_mean,Idleb,26,26,3.9615384615384617
+hno_education_mean,Lattakia,22,22,3.6818181818181817
+hno_education_mean,Quneitra,4,4,3.75
+hno_education_mean,Rural Damascus,36,36,3.611111111111111
+hno_education_mean,Tartous,27,27,3.111111111111111

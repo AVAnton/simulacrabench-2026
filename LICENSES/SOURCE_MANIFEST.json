@@ -1,0 +1,86 @@
+{
+  "audit_date": "2026-11-19",
+  "source_archive": "kumo_large_all_full_context_r1.zip",
+  "source_archive_sha256": "0594c4c57fa879a87638741ccdb955449e02ababfd34d0e6e8fa85c02c84af2d",
+  "sdm_revision": "842c408fe2a8711bdf2e7cff4bfbe54266d6b940",
+  "notes": "Exact original licence and notice bytes; file-level copyrights remain in the source files. External models and dependency packages are not bundled. Model licence copies do not imply the corresponding model is used.",
+  "files": [
+    {
+      "file": "SDM-Apache-2.0.txt",
+      "archive_entry": "vendor/LICENSE",
+      "bytes": 11432,
+      "sha256": "4f321b887d0350e672e06c8a8bc85cff17ee2d1f3c360617079041ceee324c81",
+      "upstream_source": "https://github.com/NVIDIA/structured-data-models/blob/842c408fe2a8711bdf2e7cff4bfbe54266d6b940/LICENSE"
+    },
+    {
+      "file": "TabICLv2-BSD-3-Clause.txt",
+      "archive_entry": "vendor/sdm/models/tabiclv2/LICENSE",
+      "bytes": 1690,
+      "sha256": "95a2695caa235ece69159253ad030c753a25c3c6cd138864f3f82091d792c5de",
+      "upstream_source": "https://github.com/NVIDIA/structured-data-models/blob/842c408fe2a8711bdf2e7cff4bfbe54266d6b940/sdm/models/tabiclv2/LICENSE"
+    },
+    {
+      "file": "TabFM-code-Apache-2.0.txt",
+      "archive_entry": "vendor/sdm/models/tabfm/LICENSE",
+      "bytes": 11730,
+      "sha256": "9bf1e58d8330d67fc8061e2f698e27c410752dca646eefdea1485c55207c025c",
+      "upstream_source": "https://github.com/NVIDIA/structured-data-models/blob/842c408fe2a8711bdf2e7cff4bfbe54266d6b940/sdm/models/tabfm/LICENSE"
+    },
+    {
+      "file": "TimesFM3-code-Apache-2.0.txt",
+      "archive_entry": "vendor/sdm/models/timesfm3/LICENSE",
+      "bytes": 11752,
+      "sha256": "79c74c7ef8e4386e9e6c8edf58437e4147c0bf92b77a4f106fbeb050a2cf305e",
+      "upstream_source": "https://github.com/NVIDIA/structured-data-models/blob/842c408fe2a8711bdf2e7cff4bfbe54266d6b940/sdm/models/timesfm3/LICENSE"
+    },
+    {
+      "file": "TabPFN-Extensions-Apache-2.0.txt",
+      "archive_entry": "vendor/third_party/tabpfn-extensions/LICENSE",
+      "bytes": 11346,
+      "sha256": "bfc2c50f433a92e1b2ca0071018d4e8f526845ada4ab5cdbe4b9a86860ed2103",
+      "upstream_source": "https://github.com/NVIDIA/structured-data-models/blob/842c408fe2a8711bdf2e7cff4bfbe54266d6b940/third_party/tabpfn-extensions/LICENSE"
+    },
+    {
+      "file": "PyTorch-BSD-3-Clause.txt",
+      "archive_entry": "vendor/third_party/pytorch/LICENSE",
+      "bytes": 3464,
+      "sha256": "bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43",
+      "upstream_source": "https://github.com/NVIDIA/structured-data-models/blob/842c408fe2a8711bdf2e7cff4bfbe54266d6b940/third_party/pytorch/LICENSE"
+    },
+    {
+      "file": "Contributor-Covenant-MIT.txt",
+      "archive_entry": "vendor/third_party/contributor-covenant/LICENSE",
+      "bytes": 1085,
+      "sha256": "6d1b2995f5937472f00bf977aa67e18a401ce2f0e2f5eab71dd643155aaf8915",
+      "upstream_source": "https://github.com/NVIDIA/structured-data-models/blob/842c408fe2a8711bdf2e7cff4bfbe54266d6b940/third_party/contributor-covenant/LICENSE"
+    },
+    {
+      "file": "Kumo-Tabular-OpenMDW-1.1.txt",
+      "archive_entry": "KUMO_MODEL_LICENSE.txt",
+      "bytes": 2693,
+      "sha256": "44b43ed7b8e0f987dc5e90fb6cb4b901eccf0b14dc9f17a9033951603851d37d",
+      "upstream_source": "https://huggingface.co/nvidia/Kumo-Tabular/blob/3520742f7f3b937a2751266cea22d7fb6686882c/LICENSE"
+    },
+    {
+      "file": "TabFM-weights-Non-Commercial-v1.0.txt",
+      "archive_entry": "TABFM_MODEL_LICENSE.txt",
+      "bytes": 7188,
+      "sha256": "26d8c4748b755fd202668ca89471b1847f2e0e0d9a88707642b1a3a1d2edb276",
+      "upstream_source": "https://huggingface.co/google/tabfm-1.0.0-pytorch/blob/main/LICENSE"
+    },
+    {
+      "file": "Kumo-Relational-NOTICE.txt",
+      "archive_entry": "vendor/sdm/models/kumo/relational/NOTICE",
+      "bytes": 206,
+      "sha256": "3852a3ca4cd71a7cdbd27f2ddd0027ec1fe99d00f3f0869ce385c6faf054c261",
+      "upstream_source": "https://github.com/NVIDIA/structured-data-models/blob/842c408fe2a8711bdf2e7cff4bfbe54266d6b940/sdm/models/kumo/relational/NOTICE"
+    },
+    {
+      "file": "SDM-THIRD_PARTY_LICENSES.md",
+      "archive_entry": "vendor/THIRD_PARTY_LICENSES.md",
+      "bytes": 3189,
+      "sha256": "553aacd9be17d4144b98a4556311ec58d43579f72380d827bcf89fe3ee699a24",
+      "upstream_source": "https://github.com/NVIDIA/structured-data-models/blob/842c408fe2a8711bdf2e7cff4bfbe54266d6b940/THIRD_PARTY_LICENSES.md"
+    }
+  ]
+}

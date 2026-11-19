@@ -1,0 +1,21 @@
+{
+  "checked": "2026-11-19",
+  "source_url": "https://data.humdata.org/api/3/action/package_show?id=syrian-arab-republic-humanitarian-needs",
+  "dataset": {
+    "id": "cfd515f3-e45c-4c6b-a0f4-1a517f0b726f",
+    "name": "syrian-arab-republic-humanitarian-needs",
+    "title": "Syrian Arab Republic: Humanitarian Needs",
+    "license_id": "cc-by",
+    "license_title": "Creative Commons Attribution International (CC BY)",
+    "license_url": "http://www.opendefinition.org/licenses/cc-by",
+    "dataset_source": "Humanitarian partners"
+  },
+  "resource": {
+    "id": "0bc1b237-862c-47f9-b751-443d8ffa9bee",
+    "name": "syr_hpc_needs_2024.xlsx",
+    "url": "https://data.humdata.org/dataset/cfd515f3-e45c-4c6b-a0f4-1a517f0b726f/resource/0bc1b237-862c-47f9-b751-443d8ffa9bee/download/pin_severity_hno_2024_20240401.xlsx",
+    "size": 78280,
+    "last_modified": "2024-04-01T06:59:18.13149",
+    "description": "The Syria Humanitarian Needs 2024 dataset was compiled by OCHA on behalf of the Humanitarian Country Team and partners."
+  }
+}

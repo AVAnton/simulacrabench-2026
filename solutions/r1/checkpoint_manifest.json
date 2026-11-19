@@ -1,0 +1,9 @@
+{
+  "kumo": {
+    "repo": "nvidia/Kumo-Tabular",
+    "revision": "3520742f7f3b937a2751266cea22d7fb6686882c",
+    "filename": "large/classifier.pt",
+    "sha256": "cc21484316949641cc3d65a7bb6c36cdea854cc569435755ff23b850018ec613",
+    "bytes": 854850034
+  }
+}

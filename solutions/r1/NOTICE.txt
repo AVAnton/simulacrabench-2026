@@ -1,0 +1,5 @@
+SDM source revision 842c408fe2a8711bdf2e7cff4bfbe54266d6b940, Apache-2.0, with upstream and third-party license notices in vendor/.
+Only Kumo Large classifier v1.0.1 is instantiated and used for UNICEF, World Bank and UNHCR. Checkpoint bytes and repository revision remain pinned in checkpoint_manifest.json; weights are not redistributed.
+The package retains upstream source and notices for other SDM architectures, but models.txt and checkpoint_manifest.json request only Kumo. No TabFM weights are prefetched or loaded by this submission.
+No changes to SDM model architecture or default preprocessing recipes. The adapter uses the upstream eager RMSNorm fallback to avoid JIT filesystem access inside predict.
+SDM base.py retains the existing cache-placement conditional. All estimator caches stay on CUDA, estimators execute sequentially, and full context row counts are asserted after preprocessing. Kumo native ECOC handles targets above ten classes without splitting the training rows.
