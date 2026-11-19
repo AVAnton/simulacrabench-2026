@@ -8,7 +8,7 @@ import sys
 import tempfile
 
 sys.dont_write_bytecode = True
-from _release import digest, public_archive_bytes
+from _release import digest, public_archive_bytes, solution_id, solution_name
 
 
 def write_archive(path: Path, archive: bytes) -> bool:
@@ -46,16 +46,20 @@ def write_archive(path: Path, archive: bytes) -> bool:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("solution", choices=("r1", "v4"))
+    parser.add_argument("solution", type=solution_id, metavar="{submitted,survey-context}")
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--external-data", type=Path, help="v4: local directory containing the six historical aggregate CSVs")
+    parser.add_argument("--external-data", type=Path, help="Prepared tables for the survey-context variant")
+    parser.add_argument("--json", action="store_true", help="Print a detailed machine-readable build receipt")
     args = parser.parse_args()
     try:
         if args.solution == "r1" and args.external_data is not None:
-            raise ValueError("r1 does not use external data")
+            raise ValueError("The submitted model does not use external data")
         archive = public_archive_bytes(args.solution, args.external_data)
         created = write_archive(args.output, archive)
-        print(json.dumps({"solution": args.solution, "output": str(args.output), "bytes": len(archive), "sha256": digest(archive), "created": created, "historical_archive_reproduced": False}))
+        if args.json:
+            print(json.dumps({"solution": args.solution, "name": solution_name(args.solution), "output": str(args.output), "bytes": len(archive), "sha256": digest(archive), "created": created, "historical_archive_reproduced": False}))
+        else:
+            print(f"{'Built' if created else 'Verified existing'} {solution_name(args.solution)} package: {args.output}")
         return 0
     except (OSError, ValueError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)

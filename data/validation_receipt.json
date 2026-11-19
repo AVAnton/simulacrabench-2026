@@ -1,12 +1,12 @@
 {
   "checked": "2026-11-19",
-  "prepare_sha256": "c19b7d83d2b4ea6c811725790c38e4bd78024848cded3791072120a643d945cd",
+  "prepare_sha256": "a07659671889c73884a4d25847a290d74a25e9a5946ccb3a2d13319b39ef7f07",
   "checks": {
     "full_rebuild": {
       "status": "passed",
       "tables": 6,
       "comparison": "byte-exact",
-      "seconds": 49.76599999994505,
+      "seconds": 63.15599999995902,
       "source_modes": {
         "afro": "original-file",
         "wgm": "original-file",
@@ -20,27 +20,27 @@
       "status": "passed",
       "tables": 6,
       "comparison": "byte-exact",
-      "seconds": 0.875,
+      "seconds": 1.0940000000409782,
       "source_modes": {
         "afro": "original-file",
-        "palms": "published-derived-table",
-        "hno": "published-derived-table",
         "pases": "published-derived-table",
         "ged": "published-derived-table",
-        "wgm": "published-derived-table"
+        "wgm": "published-derived-table",
+        "palms": "published-derived-table",
+        "hno": "published-derived-table"
       }
     },
     "exact_raw_member": {
       "status": "passed",
       "tables": 6,
       "comparison": "byte-exact",
-      "seconds": 2.984000000054948,
+      "seconds": 3.4219999999040738,
       "source_modes": {
         "afro": "original-file",
         "ged": "exact-archive-member",
         "wgm": "published-derived-table",
-        "hno": "published-derived-table",
         "palms": "published-derived-table",
+        "hno": "published-derived-table",
         "pases": "published-derived-table"
       }
     },
@@ -48,14 +48,14 @@
       "status": "passed",
       "tables": 6,
       "comparison": "byte-exact",
-      "seconds": 3.375,
+      "seconds": 4.202999999979511,
       "source_modes": {
         "afro": "original-file",
         "ged": "exact-archive-member",
         "wgm": "published-derived-table",
-        "hno": "published-derived-table",
+        "palms": "published-derived-table",
         "pases": "published-derived-table",
-        "palms": "published-derived-table"
+        "hno": "published-derived-table"
       }
     },
     "missing_afro": {

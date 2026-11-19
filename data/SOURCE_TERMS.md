@@ -33,7 +33,7 @@ of publications. No communication has been sent by this release process.
 Attribution for a permitted use: Afrobarometer Data, Kenya, Mali, Nigeria and Zambia,
 Round 9, 2021–2022 fieldwork, available at [Afrobarometer](https://www.afrobarometer.org).
 Local changes: selected-country weighted vaccine/trust proportions by documented
-demographic groups. Publicly distributing the full generated v4 archive would also
+demographic groups. Publicly distributing the full survey-context archive would also
 distribute this excluded derivative; do not do so without established permission.
 
 ## Wellcome Global Monitor
@@ -113,9 +113,9 @@ Swedish Research Council grant 2021-00162, as acknowledged on the source page.
 Changes: mapped Syrian governorate counts for two windows, restricted to records
 with equal parsed start/end dates; `log1p` transform. No fatality estimates are used.
 
-## Sources outside this v4 release
+## Sources outside the survey-context model
 
 VCI annual files, VASyR workbooks, Arab Barometer and the Harvard Syrian-refugee
-proxy data are not inputs to these six v4 tables. No rights from those sources are
+proxy data are not inputs to these six tables. No rights from those sources are
 assumed or transferred to this release. A permissive licence for an article,
 basemap, or portal software is not treated as a licence for an unrelated dataset.

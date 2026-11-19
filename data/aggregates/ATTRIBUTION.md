@@ -14,7 +14,7 @@ the project or its interpretations. Full details: [SOURCE_TERMS.md](../SOURCE_TE
   Monitor, 2018*, 2nd edition (2019), UK Data Service,
   [doi:10.5255/UKDA-SN-8466-2](https://doi.org/10.5255/UKDA-SN-8466-2);
   [catalog CC BY 4.0 notice](https://datacatalogue.ukdataservice.ac.uk/studies/study/8466).
-  The actual workbook is separately pinned by SHA256 and the Wellcome notice.
+  The input workbook is identified in the source inventory.
 - **palms.csv:** Andrew Kerr, David Lam and Martin Wittenberg, PALMS 1993–2025,
   version 4; DataFirst, Cape Town, producer/distributor, 2025;
   [doi:10.25828/gtr1-8r20](https://doi.org/10.25828/gtr1-8r20).
@@ -45,5 +45,5 @@ the project or its interpretations. Full details: [SOURCE_TERMS.md](../SOURCE_TE
   Swedish Research Council grant 2021-00162. Project changes: Syrian governorate
   event counts in 2024 and January–April 2025, equal parsed event dates, `log1p`.
 
-Afrobarometer data and derivatives are absent. A locally combined complete v4
+Afrobarometer data and derivatives are absent. A locally combined complete survey-context
 package has additional redistribution obligations and is not cleared by this notice.

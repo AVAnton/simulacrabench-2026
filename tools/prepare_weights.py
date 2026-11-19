@@ -18,7 +18,7 @@ def main():
                         help="Use an already downloaded large/classifier.pt")
     args = parser.parse_args()
     repo_root = Path(__file__).resolve().parents[1]
-    manifest = repo_root / "solutions" / "r1" / "checkpoint_manifest.json"
+    manifest = repo_root / "solutions" / "submitted" / "checkpoint_manifest.json"
     spec = json.loads(manifest.read_text(encoding="utf-8"))["kumo"]
     repo = args.cache_dir / ("models--" + spec["repo"].replace("/", "--"))
     snapshot = repo / "snapshots" / spec["revision"] / spec["filename"]
@@ -58,7 +58,7 @@ def main():
                     raise ValueError("A different revision was assigned to this cache concurrently.")
         finally:
             temporary.unlink(missing_ok=True)
-    print(f"Verified {spec['sha256']}  {snapshot}")
+    print("Kumo Large checkpoint is ready for offline inference.")
     print(f"Set HF_HUB_CACHE to {args.cache_dir.resolve()} for offline checks.")
 
 

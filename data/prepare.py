@@ -1,4 +1,4 @@
-"""Privately rebuild the six historical v4 context tables from verified local inputs.
+"""Build the six survey-context tables from verified local inputs.
 
 No downloading, model inference, benchmark responses, or unpublished audit archive
 is required. Read README.md and SOURCE_TERMS.md before opting in.
@@ -200,7 +200,7 @@ def main():
     args = p.parse_args()
     base = Path(__file__).resolve().parent
     metadata = json.loads((base / 'source_manifest.json').read_text(encoding='utf-8'))
-    runtime_manifest = json.loads((base / 'historical_v4_manifest.public.json').read_text(encoding='utf-8'))
+    runtime_manifest = json.loads((base / 'feature_definitions.json').read_text(encoding='utf-8'))
     supplied = json.loads(args.inputs.read_text(encoding='utf-8-sig'))
     if not isinstance(supplied, dict) or set(supplied) - set(metadata['sources']):
         p.error('Input JSON keys must be drawn from: ' + ', '.join(metadata['sources']))
@@ -250,7 +250,7 @@ def main():
     out.parent.mkdir(parents=True, exist_ok=True)
     started = time.monotonic()
     print(f'Verified {len(sources)} local sources and {len(published)} published tables; preparing private output.', flush=True)
-    with tempfile.TemporaryDirectory(prefix='v4-prepare-', dir=out.parent) as temporary:
+    with tempfile.TemporaryDirectory(prefix='survey-context-', dir=out.parent) as temporary:
         stage = Path(temporary)
         payload = stage / 'payload'
         cache = stage / 'scratch'

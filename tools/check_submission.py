@@ -14,7 +14,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--archive", type=Path, required=True)
     parser.add_argument("--checker", type=Path, required=True, help="Official tools/check_submission_zip.py from the organizer repository")
-    parser.add_argument("--checker-sha256", default=HISTORICAL_CHECKER_SHA256, help="Expected checker digest; default is the version used for historical r1/v4 validation")
+    parser.add_argument("--checker-sha256", default=HISTORICAL_CHECKER_SHA256, help=argparse.SUPPRESS)
     parser.add_argument("--hf-cache", type=Path, required=True, help="Prepared Hugging Face hub cache, not its parent directory")
     device = parser.add_mutually_exclusive_group()
     device.add_argument("--gpu", help="Optional CUDA device index or GPU UUID; omission preserves the scheduler's CUDA_VISIBLE_DEVICES")

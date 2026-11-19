@@ -7,14 +7,16 @@ from pathlib import Path
 import sys
 
 sys.dont_write_bytecode = True
-from _release import digest, historical_r1_bytes, manifest, source_bytes
+from _release import digest, historical_r1_bytes, manifest, source_bytes, solution_id, solution_name
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--solution", choices=("r1", "v4", "all"), default="all")
-    parser.add_argument("--external-data", type=Path, help="Optionally verify all six privately prepared v4 CSVs")
-    parser.add_argument("--historical-r1", action="store_true", help="Verify the original r1 ZIP hash by in-memory reconstruction; never writes the historical ZIP")
+    parser.add_argument("--solution", type=lambda value: value if value == "all" else solution_id(value), metavar="{submitted,survey-context,all}", default="all")
+    parser.add_argument("--external-data", type=Path, help="Also verify the locally prepared survey-context tables")
+    parser.add_argument("--original-submission", action="store_true", dest="historical_r1", help="Also verify the original submitted package in memory")
+    parser.add_argument("--historical-r1", action="store_true", help=argparse.SUPPRESS)
+    parser.add_argument("--json", action="store_true", help="Print detailed machine-readable verification results")
     args = parser.parse_args()
     result = {}
     try:
@@ -33,7 +35,15 @@ def main() -> int:
         if args.historical_r1:
             historical = historical_r1_bytes()
             result["historical_r1"] = {"sha256": digest(historical), "bytes": len(historical), "verified_in_memory_only": True}
-        print(json.dumps(result, indent=2))
+        if args.json:
+            print(json.dumps(result, indent=2))
+        else:
+            for key, checked in result.items():
+                if key == "historical_r1":
+                    print("Verified the original submitted package in memory.")
+                else:
+                    suffix = " (external tables not supplied)" if checked["external_data_not_bundled"] else ""
+                    print(f"Verified {solution_name(key)} sources: {checked['verified_files']} files{suffix}.")
         return 0
     except (OSError, ValueError, SyntaxError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)

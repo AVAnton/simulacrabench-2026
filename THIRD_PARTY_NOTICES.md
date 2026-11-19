@@ -4,13 +4,13 @@ The repository's [MIT license](LICENSE) applies to the original submission adapt
 
 ## Vendored Structured Data Models
 
-Both `solutions/r1/vendor/` and `solutions/v4/vendor/` derive from [NVIDIA Structured Data Models](https://github.com/NVIDIA/structured-data-models) at revision [`842c408fe2a8711bdf2e7cff4bfbe54266d6b940`](https://github.com/NVIDIA/structured-data-models/tree/842c408fe2a8711bdf2e7cff4bfbe54266d6b940).
+Both solutions include a pinned version of [NVIDIA Structured Data Models](https://github.com/NVIDIA/structured-data-models/tree/842c408fe2a8711bdf2e7cff4bfbe54266d6b940).
 
 Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 
 SDM is distributed under [Apache License 2.0](LICENSES/SDM-Apache-2.0.txt), with the additional attributions below. The original `vendor/LICENSE`, `vendor/THIRD_PARTY_LICENSES.md`, nested license files, and source-file copyright and SPDX notices are retained in each solution. [The upstream third-party notice](LICENSES/SDM-THIRD_PARTY_LICENSES.md) is also preserved verbatim; its internal relative links refer to the original vendor layout.
 
-The historical r1 and v4 ZIPs contain identical vendor trees. Comparing every bundled vendor file against the pinned upstream revision found one changed upstream source file: `sdm/models/base.py`. Its cache-placement condition adds `and getattr(self, "_offload_cache", True)` so the adapter can keep estimator caches on CUDA. `vendor/REVISION` records the source revision and is an added provenance file. The released copies of `base.py` carry a prominent modification notice. This added comment changes the release file bytes without changing executable behavior; the original competition ZIP hash is provenance, not the hash of a rebuilt public ZIP.
+Both solutions modify `sdm/models/base.py` so inference caches can remain on the GPU. The file includes a modification notice.
 
 ## Components within the vendor tree
 
@@ -29,7 +29,7 @@ The upstream distribution also includes [PyTorch's complete copyright and BSD li
 
 ## Pretrained model materials
 
-Both predictors select only [NVIDIA Kumo-Tabular](https://huggingface.co/nvidia/Kumo-Tabular), `large/classifier.pt`, at model repository revision `3520742f7f3b937a2751266cea22d7fb6686882c`. The checkpoint has SHA-256 `cc21484316949641cc3d65a7bb6c36cdea854cc569435755ff23b850018ec613` and size 854,850,034 bytes. Each solution retains its `checkpoint_manifest.json`.
+Both solutions use the [Kumo Large classifier](https://huggingface.co/nvidia/Kumo-Tabular/tree/3520742f7f3b937a2751266cea22d7fb6686882c), file `large/classifier.pt`. The repository contains a download reference and the model licence.
 
 Kumo model materials are licensed under [OpenMDW 1.1](LICENSES/Kumo-Tabular-OpenMDW-1.1.txt), Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved. The model license is separate from the Apache license for SDM and the MIT license for this repository. Redistribution of model materials requires retaining the OpenMDW agreement and applicable notices of origin. This repository supplies download metadata rather than the checkpoint.
 
@@ -41,4 +41,4 @@ The retained TabFM and TimesFM implementations are Apache-licensed code. Their p
 
 No dataset license or permission to redistribute respondent records is granted by this repository's MIT license. Some aggregate tables are included under their providers' terms, as documented in [data/SOURCE_TERMS.md](data/SOURCE_TERMS.md). Other sources, including any artifacts whose redistribution permission has not been established, remain local and must be supplied separately when needed. Consult the release's data documentation and the original data providers' terms before preparing or redistributing those artifacts.
 
-[LICENSES/SOURCE_MANIFEST.json](LICENSES/SOURCE_MANIFEST.json) records the exact copied license and notice files, their SHA-256 hashes, the original archive entries, and upstream source URLs. The vendored license texts were copied byte-for-byte from the historical r1 ZIP and agree with those in v4. The pinned upstream SDM license and third-party notice and the pinned Kumo license were also verified against their official primary-source URLs on 19 November 2026.
+The [licence inventory](LICENSES/SOURCE_MANIFEST.json) identifies the upstream sources for the notices included here.

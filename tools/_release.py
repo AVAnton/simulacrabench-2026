@@ -8,6 +8,7 @@ from pathlib import Path, PurePosixPath
 import zipfile
 
 REPO = Path(__file__).resolve().parents[1]
+SOLUTION_NAMES = {"r1": "submitted", "v4": "survey-context"}
 MODIFIED_FILE = "vendor/sdm/models/base.py"
 MODIFICATION_NOTICE = b"# Modified for this submission: cache offload is conditional on _offload_cache.\n"
 
@@ -16,10 +17,22 @@ def digest(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
+def solution_id(value: str) -> str:
+    """Accept descriptive public names and preserve older script invocations."""
+    if value in SOLUTION_NAMES:
+        return value
+    for historical, public in SOLUTION_NAMES.items():
+        if value == public:
+            return historical
+    raise ValueError("Choose submitted or survey-context")
+
+
+def solution_name(value: str) -> str:
+    return SOLUTION_NAMES[solution_id(value)]
+
+
 def manifest(solution: str) -> dict:
-    if solution not in ("r1", "v4"):
-        raise ValueError("solution must be r1 or v4")
-    result = json.loads((REPO / "solutions" / solution / "release_manifest.json").read_text(encoding="utf-8"))
+    result = json.loads((REPO / "solutions" / solution_name(solution) / "release_manifest.json").read_text(encoding="utf-8"))
     names = []
     for row in result["entries"]:
         name = row["name"]
@@ -35,11 +48,11 @@ def manifest(solution: str) -> dict:
 def source_bytes(solution: str, row: dict, external_data: Path | None = None) -> bytes:
     if row["source"] == "external_data":
         if external_data is None:
-            raise ValueError("v4 requires six locally prepared CSVs; pass --external-data DIR (see data/README.md)")
+            raise ValueError("The survey-context variant requires prepared tables; pass --external-data DIR (see data/README.md)")
         path = external_data / PurePosixPath(row["name"]).name
         expected = row["sha256"]
     else:
-        path = REPO / "solutions" / solution / row["name"]
+        path = REPO / "solutions" / solution_name(solution) / row["name"]
         expected = row["release_sha256"]
     if not path.is_file() or path.is_symlink():
         raise ValueError(f"Missing regular source file: {path}")
@@ -76,6 +89,7 @@ def historical_r1_bytes() -> bytes:
 
 
 def public_archive_bytes(solution: str, external_data: Path | None = None) -> bytes:
+    solution = solution_id(solution)
     meta = manifest(solution)
     contents = {row["name"]: source_bytes(solution, row, external_data) for row in meta["entries"]}
     for name in ("LICENSE", "THIRD_PARTY_NOTICES.md"):
